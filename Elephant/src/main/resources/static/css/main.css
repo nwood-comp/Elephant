@@ -82,6 +82,10 @@ nav.navbar {
     background-color: #fff;
 }
 
+.guideline-link:hover {
+    font-weight: bold;
+}
+
 /*  add media queries for toggled mobile nav 
 li.nav-item {
     background-color: rgb(37,116,163);

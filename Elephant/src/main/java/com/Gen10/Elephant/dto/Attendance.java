@@ -1,6 +1,6 @@
 package com.Gen10.Elephant.dto;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,11 +24,14 @@ public class Attendance {
 	private boolean isAttending;
 	
 	@Column
-	private Date attendanceDate;
+	private LocalDate attendanceDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "userid")
 	private User user;
+        
+	@Column
+	private boolean isAuthorized;
 
 	public int getAttendanceId() {
 		return this.attendanceId;
@@ -50,11 +53,11 @@ public class Attendance {
 		this.isAttending = isAttending;
 	}
 
-	public Date getAttendanceDate() {
+	public LocalDate getAttendanceDate() {
 		return this.attendanceDate;
 	}
 
-	public void setAttendanceDate(Date attendanceDate) {
+	public void setAttendanceDate(LocalDate attendanceDate) {
 		this.attendanceDate = attendanceDate;
 	}
 
@@ -66,4 +69,11 @@ public class Attendance {
 		this.user = user;
 	}
 
+	public boolean getIsAuthorized() {
+		return isAuthorized;
+	}
+
+	public void setIsAuthorized(boolean isAuthorized) {
+		this.isAuthorized = isAuthorized;
+	}
 }
